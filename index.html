@@ -1,0 +1,259 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Subli+ Honduras</title>
+</head>
+<body class="grey lighten-3">
+
+  <!-- navigation bars-->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo">
+        <img src="img/subli3.png" style="width: 60px; margin-top: 1px;">
+      </a>
+        <!-- logged in links-->
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="logged-in" style="display:none;"> 
+          <a href="catalog.html" class="grey-text modal-trigger" data-target="modal-catalog">Catalog</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="canvas.html" class="grey-text modal-trigger" data-target="modal-canvas">Canvas</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="appointments.html" class="grey-text modal-trigger" data-target="modal-appo">Appointments</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="status.html" class="grey-text modal-trigger" data-target="modal-status">Order Status</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="support.html" class="grey-text modal-trigger" data-target="modal-support">Support</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="#" class="grey-text" id="logout">Logout</a>
+        </li>
+          <!-- admin order create option-->
+          <li class="admin" style="display:none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create Order</a>
+          </li>
+          <!-- logged out options-->
+          <li class="logged-out" style="display:none;">
+            <a href="catalog.html" class="grey-text modal-trigger" data-target="modal-catalog">Catalog</a>
+          </li>
+          <li class="logged-out" style="display:none;">
+            <a href="canvas.html" class="grey-text modal-trigger" data-target="modal-canvas">Canvas</a>
+          </li>
+         
+          <li class="logged-out" style="display:none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out" style="display:none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- admin creator tool -->
+  <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; display: none;" > <!-- display:none; hides info-->
+    <input type="email" placeholder="User email" id="admin-email" required />
+    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
+  </form>
+
+
+  <!-- sign up button that pops up when clicked -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign Up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Enter an Email Address:</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Enter a Password(At least 6 characters long.</label>
+        </div>
+
+        <button class="btn red darken-2 z-depth-0">Sign up</button>
+        <p class="Error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- login button that pops when clicked -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Please Enter Your Email Address:</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Please Enter Your Password:</label>
+        </div>
+        <button class="btn red darken-2 z-depth-0">Login</button>
+        <p class="Error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!--displays the account button when user or admin are logged in -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account Details</h4><br />
+      <div class="account-details"></div>     
+    </div>
+  </div>
+
+  
+<!-- shows admin 'create order' button when logged in -->
+<div id="modal-create" class="modal">
+  <div class="modal-content">
+    <h4>Create Order</h4><br />
+    <form id="create-form">
+      <div class="input-field">
+        <input type="text" id="title" required>
+        <label for="title">Order ID</label>
+      </div>
+      <div class="input-field">
+        <textarea id="content" class="materialize-textarea" required></textarea>
+        <label for="content">Order Information</label>
+      </div>
+      <button class="btn red darken-2 z-depth-0">Create</button>
+    </form>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2>About Subli+</h2>
+  <p>Create an Account to Access the rest of the features!</p>
+</div>
+
+<!--companie timeline card-->
+<div class="left">
+    <div class="col s12 m7">
+      <div class="card-panel teal lighten-2">
+        <h3 class="black-text">2020</h3>
+        <p>Subli+ plans on opening a smaller office in San Pedro Sula, the second 
+          largest city of Honduras, with the purpose of expanding their operations.</p>
+      </div>
+    </div>
+  </div><div class="right">
+    <div class="col s12 m7">
+      <div class="card-panel blue">
+        <h3 class="black-text">2018</h3>
+        <p>Subli+ begins to produce their clothing line starting with simple t-shirts, 
+          later on expanding to jerseys, jackets, and other outerware.</p>
+      </div>
+    </div>
+  </div><div class="left">
+    <div class="col s12 m7">
+      <div class="card-panel orange">
+        <h3 class="black-text">2016</h3>
+        <p>More machinery is bought allowing them to create custom-printed household items such as bags, 
+          <br>thermoses, etc. Also, 2016 was the year that Subli+ began donating 15% of their net profit 
+          to help fight poverty in Honduras. </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="col s12 m7">
+      <div class="card-panel red">
+        <h3 class="black-text">2014</h3>
+        <p>Subli+ begins operations with only a couple machines, the original purpose was 
+          to solely produce stickers.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- Google Maps embedded code.-->
+<div class="container">
+  <p></p>
+  <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.388114550745!2d-87.18752117085606!3d14.10357630006239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6fa2de83073da3%3A0xe54694ca04267a8e!2sDigitaliis!5e0!3m2!1sen!2sus!4v1588967281331!5m2!1sen!2sus" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></p>
+  <h5  class="black-text">Subli+ Location Above/ Hours: 8:00 AM - 5:00PM </h5>
+
+</div>
+
+  
+
+  <!--footer-->
+      <div class="row">
+        <div class="col l6 s12">
+          <img src="img/propic.jpg" alt="pro" style ="float: left; "width="100">
+          <h5 class="black-text">About Me</h5>
+          <h6 class="black-text">Student Developer</h6class="grey-text">          
+          <p class="black-text">This project was made possible by the help of Dr.Carol Redfield, and the entire CS Department at St.Mary's University.</p>        
+        </div>
+        
+      <div class="col l4 offset-l2 s12">
+        <h5 class="black-text">St. Mary's University Information Below</h5>
+        <ul>
+            <li><a class="black-text" href="https://www.facebook.com/StMarysU/" target="_blank">Facebook</a></li>
+            <li><a class="black-text" href="https://twitter.com/stmarysu?lang=en" target="_blank">Twitter</a></li>
+            <li><a class="black-text" href="https://www.linkedin.com/school/st--mary's-university/" target="_blank">Linked In</a></li>
+            <li><a class="black-text" href="https://www.instagram.com/stmarysu/?hl=en" target="_blank">Instagram</a></li>
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright transaprent">
+      <div class="container center-align">&copy; 2020 St. Mary's University</div>
+    </div>
+  </footer>
+
+  
+
+  
+  
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-functions.js"></script>
+
+                                                                       
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCCicP2hLarecQjG-rWxwYMy28nJhYVk_Q",
+    authDomain: "senior-project-63454.firebaseapp.com",
+    databaseURL: "https://senior-project-63454.firebaseio.com",
+    projectId: "senior-project-63454",
+    storageBucket: "senior-project-63454.appspot.com",
+    messagingSenderId: "990355159994",
+    appId: "1:990355159994:web:b79bf4bc2b105b8e6abb83",
+    measurementId: "G-133T92SNVN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const functions = firebase.functions();
+  
+    // update firestore settings
+    //db.settings({ timestampsInSnapshots: true });                                  
+  </script>
+                                     
+  <!-- Javascript and Modal reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+  <script src="auth.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

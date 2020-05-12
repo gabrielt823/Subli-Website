@@ -1,0 +1,259 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Subli+ Honduras</title>
+</head>
+<body class="grey lighten-3">
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="index.html" class="brand-logo">
+        <img src="img/subli3.png" style="width: 60px; margin-top: 1px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li class="logged-in" style="display:none;"> 
+          <a href="catalog.html" class="grey-text modal-trigger" data-target="modal-catalog">Catalog</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="canvas.html" class="grey-text modal-trigger" data-target="modal-canvas">Canvas</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="appointments.html" class="grey-text modal-trigger" data-target="modal-appo">Appointments</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="status.html" class="grey-text modal-trigger" data-target="modal-status">Order Status</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="support.html" class="grey-text modal-trigger" data-target="modal-support">Support</a>
+        </li>
+        <li class="logged-in" style="display:none;"> 
+          <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in" style="display:none;">
+          <a href="#" class="grey-text" id="logout">Logout</a>
+        </li>
+          <li class="admin" style="display:none;">
+            <a href="ordcreate.html" class="grey-text modal-trigger" data-target="modal-create">Create Order</a>
+          </li>
+          <li class="logged-out" style="display:none;">
+            <a href="catalog.html" class="grey-text modal-trigger" data-target="modal-catalog">Catalog</a>
+          </li>
+          <li class="logged-out" style="display:none;">
+            <a href="canvas.html" class="grey-text modal-trigger" data-target="modal-canvas">Canvas</a>
+          </li>
+         
+          <li class="logged-out" style="display:none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out" style="display:none;">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ADMIN ACTIONS -->
+  <form class="center-align admin-actions admin" style="margin: 40px auto; max-width: 300px; display: none;" > <!-- display:none; hides info-->
+    <input type="email" placeholder="User email" id="admin-email" required />
+    <button class="btn-small yellow darken-2 z-depth-0">Make admin</button>
+  </form>
+
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign Up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Enter an Email Address:</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Enter a Password(At least 6 characters long.</label>
+        </div>
+
+        <button class="btn red darken-2 z-depth-0">Sign up</button>
+        <p class="Error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Please Enter Your Email Address:</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Please Enter Your Password:</label>
+        </div>
+        <button class="btn red darken-2 z-depth-0">Login</button>
+        <p class="Error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account Details</h4><br />
+      <div class="account-details"></div>     <!-- account query-->
+    </div>
+  </div>
+
+  
+<!-- CREATE GUIDE MODAL -->
+<div id="modal-create" class="modal">
+  <div class="modal-content">
+    <h4>Create Order</h4><br />
+    <form id="create-form">
+      <div class="input-field">
+        <input type="text" id="title" required>
+        <label for="title">Order ID</label>
+      </div>
+      <div class="input-field">
+        <textarea id="content" class="materialize-textarea" required></textarea>
+        <label for="content">Order Information</label>
+      </div>
+      <button class="btn red darken-2 z-depth-0">Create</button>
+    </form>
+  </div>
+</div>
+
+  <div class="about-section">
+    <h2>Questions or Concers?</h2>
+  </div>
+
+   <!-- contact form -->
+  <section class="section container scrollspy" id="contact">
+    <div class="row">
+      <div class="col s12 l5">
+        <h2 class="indigo-text text-darken-4">Please Fill Out the Form to the right. </h2>
+        <p>We're here to answer any question or concerns you may have.</p>
+        <p>If there's anything else you would need to contact us, please refer to the homepage for the business hours, and information.  </p>
+
+      </div>
+      <div class="col s12 l5 offset-l2">
+        <form>
+          <div class="input-field">
+            <p>Describe Your Issue:</p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Orders</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>No Order ID Number</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Other</span>
+              </label>
+            </p>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">message</i>
+            <textarea id="message" class="materialize-textarea" cols="20" rows="20"></textarea>
+            <label for="message">If needed, describe your issue here further.</label>
+          </div>
+          <div class="input-field center">
+            <button class="btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <img src="img/propic.jpg" alt="pro" style ="float: left; "width="100">
+        <h5 class="black-text">About Me</h5>
+        <h6 class="black-text">Student Developer</h6class="grey-text">          
+        <p class="black-text">This project was made possible by the help of Dr.Carol Redfield, and the entire CS Department at St.Mary's University.</p>        
+      </div>
+      
+    <div class="col l4 offset-l2 s12">
+      <h5 class="black-text">St. Mary's University Information Below</h5>
+      <ul>
+          <li><a class="black-text" href="https://www.facebook.com/StMarysU/" target="_blank">Facebook</a></li>
+          <li><a class="black-text" href="https://twitter.com/stmarysu?lang=en" target="_blank">Twitter</a></li>
+          <li><a class="black-text" href="https://www.linkedin.com/school/st--mary's-university/" target="_blank">Linked In</a></li>
+          <li><a class="black-text" href="https://www.instagram.com/stmarysu/?hl=en" target="_blank">Instagram</a></li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright transaprent">
+    <div class="container center-align">&copy; 2020 St. Mary's University</div>
+  </div>
+  </footer>
+  
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-functions.js"></script>
+
+                                                                       
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCCicP2hLarecQjG-rWxwYMy28nJhYVk_Q",
+    authDomain: "senior-project-63454.firebaseapp.com",
+    databaseURL: "https://senior-project-63454.firebaseio.com",
+    projectId: "senior-project-63454",
+    storageBucket: "senior-project-63454.appspot.com",
+    messagingSenderId: "990355159994",
+    appId: "1:990355159994:web:b79bf4bc2b105b8e6abb83",
+    measurementId: "G-133T92SNVN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const functions = firebase.functions();
+  
+    // update firestore settings
+    //db.settings({ timestampsInSnapshots: true });                                  
+  </script>
+                                     
+  <!-- Javascript and Modal reference -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+  <script src="auth.js"></script>
+  <script src="index.js"></script>
+  <script>
+    $(document).ready(function()
+    {
+      $('.datepicker').datepicker(
+        {
+        disableWeekends: true, //alllows appointments to not happen on weend
+        yearRange: 1
+      });
+    });
+  </script>
+
+</body>
+</html>
